@@ -230,6 +230,7 @@ public class PdfView extends PDFView implements OnPageChangeListener,OnLoadCompl
                 .password(this.password)
                 .enableAntialiasing(this.enableAntialiasing)
                 .pageFitPolicy(this.fitPolicy)
+                .fitEachPage(true)
                 .pageSnap(this.pageSnap)
                 .autoSpacing(this.autoSpacing)
                 .pageFling(this.pageFling)
