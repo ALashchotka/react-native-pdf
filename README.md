@@ -18,23 +18,21 @@ So you should install react-native-pdf and rn-fetch-blob
 
 > The table below shows the supported versions of React Native and rn-fetch-blob for different versions of `react-native-pdf`.
 
-| React Native              | 0.4x - 0.56     | 0.57    | 0.60+    |
-| ------------------------- | --------------- | ------- | -------- |
-| react-native-pdf          | 4.x.x - 5.0.x   | 5.0.9+  | 6.0.0+   |
-| rn-fetch-blob             | 0.10.15         | 0.10.15 | 0.11.0+  |
+| React Native              | 0.4x - 0.56     | 0.57    | 0.60+    | 0.62+    |
+| ------------------------- | --------------- | ------- | -------- | -------- |
+| react-native-pdf          | 4.x.x - 5.0.x   | 5.0.9+  | 6.0.0+   | 6.2.0+   |
+| rn-fetch-blob             | 0.10.15         | 0.10.15 | 0.11.0+  | 0.11.0+  |
+| progress-bar-android      |                 |         |          | 1.0.3+   |
+| progress-view             |                 |         |          | 1.0.3+   |
 
 ### Installation
 
-*Using npm:
 ```bash
-npm install rn-fetch-blob --save
-npm install react-native-pdf --save
-```
+# Using npm
+npm install react-native-pdf rn-fetch-blob @react-native-community/progress-bar-android @react-native-community/progress-view --save
 
-*or using yarn:
-```bash
-yarn add rn-fetch-blob
-yarn add react-native-pdf
+# or using yarn:
+yarn add react-native-pdf rn-fetch-blob @react-native-community/progress-bar-android @react-native-community/progress-view
 ```
 
 Then follow the instructions for your platform to link react-native-pdf into your project:
@@ -51,6 +49,8 @@ Run `pod install` in the `ios` directory. Linking is not required in React Nativ
 
 ```bash
 react-native link rn-fetch-blob
+react-native link @react-native-community/progress-bar-android
+react-native link @react-native-community/progress-view
 react-native link react-native-pdf
 ```
 </details>
@@ -78,6 +78,8 @@ android {
 **React Native 0.59.0 and below**
 ```bash
 react-native link rn-fetch-blob
+react-native link @react-native-community/progress-bar-android
+react-native link @react-native-community/progress-view
 react-native link react-native-pdf
 ```
 
@@ -143,6 +145,23 @@ react-native run-ios
 <details>
   <summary>ChangeLog details</summary>
 
+v6.2.0
+1. Fixed ReferenceError, url should be source.uri
+2. Dependency bump to support React-Native >= 0.62
+
+v6.1.2
+1. Fixed wrong scale returned from onScaleChanged()
+2. Fixed iOS Double Tap zoom
+3. Fixed Some critical typo fixes
+
+v6.1.1
+1. Fixed undefined is not an object, crashing on ios
+
+v6.1.0
+1. Fixed react-native warning on `componentWill*`
+2. Fixed onPageSingleTap
+3. Set the PDF View background color to be transparent On iOS
+
 v6.0.1
 1. Expose prop to trust self-signed SSL certs
 2. Use ViewStyleProp in index.js.flow, not deprecated StyleSheet.Styles
@@ -152,23 +171,23 @@ v6.0.0
 2. Fix calling setState while unmounted
 
 v5.1.7
-1. Downgrade to AndroidPdfViewer 3.1.0-beta.1
+1. Downgraded to AndroidPdfViewer 3.1.0-beta.1
 
 v5.1.6
-1. Fix componentWillReceiveProps and componentWillMount warnings
+1. Fixed componentWillReceiveProps and componentWillMount warnings
 
 v5.1.5
-1. Add setPage() method
-2. Upgrade to AndroidPdfViewer to 3.2.0-beta.1
-3. Fix some codes ,readme and sample
+1. Added setPage() method
+2. Upgraded to AndroidPdfViewer to 3.2.0-beta.1
+3. Fixed some codes ,readme and sample
 
 v5.1.4
-1. Update example project to RN 0.60.4
-2. Fix blank view after native module got recycled in onDetachedFromWindow event
+1. Updated example project to RN 0.60.4
+2. Fixed blank view after native module got recycled in onDetachedFromWindow event
 3. Restore singleTap, only callback, do not change scale
 
 v5.1.3
-1. Remove singleTap action from iOS, make the same with Android.
+1. Removed singleTap action from iOS, make the same with Android.
 
 
 [[more]](https://github.com/wonday/react-native-pdf/releases)

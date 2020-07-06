@@ -1,6 +1,6 @@
 {
     "name": "react-native-pdf",
-    "version": "6.0.1",
+    "version": "6.2.0",
     "summary": "A react native PDF view component",
     "description": "A react native PDF view component, support ios and android platform",
     "main": "index.js",
@@ -28,7 +28,9 @@
         "url": "https://github.com/wonday/react-native-pdf/issues"
     },
     "dependencies": {
-        "crypto-js": "^3.1.9-1",
-        "prop-types": "^15.5.10"
+        "crypto-js": "^3.2.0",
+        "prop-types": "^15.7.2",
+        "@react-native-community/progress-bar-android": "^1.0.3",
+        "@react-native-community/progress-view": "^1.0.3"
     }
 }
